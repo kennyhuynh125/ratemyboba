@@ -17,3 +17,14 @@ exports.addShop = (req, res) => {
 	});
 };
 
+// gets all the shops in the database
+exports.getShops = (req, res) => {
+	Shop.find((err,shops) => {
+		if (err) {
+			res.send(err);
+		} else {
+			res.send(shops);
+		}
+	});
+};
+

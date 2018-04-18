@@ -32,11 +32,6 @@ class Home extends React.Component {
 				<Navbar auth={auth} />
 				<div>
 				{
-					!isAuthenticated() && (
-						<h1>You are not logged in.</h1>
-					)
-				}
-				{
 					isAuthenticated() && (
 						<h1>Welcome! You are logged In!</h1>
 					)

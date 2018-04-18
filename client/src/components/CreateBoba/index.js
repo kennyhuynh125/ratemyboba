@@ -19,9 +19,7 @@ class CreateBoba extends React.Component {
 			description: '',
 			ice: '',
 			sweetness: '',
-			stores: [{name:"test", city: "test", state:"test", address:"test"},
-			{name: "hello", city: "hello", state:"hello", address:"hello"}],
-			profile: {}
+			stores: [],
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleNameChange = this.handleNameChange.bind(this);
@@ -34,7 +32,13 @@ class CreateBoba extends React.Component {
 
 	// when component mounts, stores will be ready
 	componentDidMount() {
-
+		axios.get('/getShops')
+		.then((response) => {
+			this.setState({stores: response.data});
+		})
+		.catch((error) => {
+			console.log("error", error);
+		});
 	}
 
 	// changes the name state when input is being typed
@@ -108,12 +112,12 @@ class CreateBoba extends React.Component {
 			<div className="container">
 			<Navbar auth={auth} />
 			{
-				!isAuthenticated && (
+				!isAuthenticated() && (
 					<h1>Please log in to access this page.</h1>
 				)
 			}
 			{
-				isAuthenticated && (
+				isAuthenticated() && (
 					<div>
 						<h1>Add Your Boba Drink!</h1>
 						<div className="form-group">

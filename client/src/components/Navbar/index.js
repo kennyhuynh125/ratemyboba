@@ -12,6 +12,7 @@ class Navbar extends React.Component {
 
 	render() {
 		const { isAuthenticated } = this.props.auth;
+		const user_id = localStorage.getItem('username');
 		return (
 			<div className="container">
 				<div className="navbar navbar-fluid">
@@ -41,7 +42,7 @@ class Navbar extends React.Component {
 					<li>
 					{
 							isAuthenticated() && (
-								<a>My Boba Drinks</a>
+								<Link to='/user_bobas'>My Boba Drinks</Link>
 							)
 						}
 					</li>
