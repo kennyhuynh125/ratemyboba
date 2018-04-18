@@ -1,0 +1,5 @@
+# config vars
+/server/config
+
+# node_modules
+/node_modules
