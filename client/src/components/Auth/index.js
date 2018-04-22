@@ -51,6 +51,8 @@ export default class Auth extends EventEmitter {
 			localStorage.setItem(`access_token`, authResult.accessToken);
 			localStorage.setItem(`id_token`, authResult.idToken);
 			localStorage.setItem(`expires_at`, expiresAt);
+			this.getProfile();
+			localStorage.setItem(`profile`, this.userProfile);
 
 			history.replace(`/home`);
 		}
@@ -74,10 +76,15 @@ export default class Auth extends EventEmitter {
 		});
 	}
 
+	getUsername() {
+		return localStorage.getItem('username');
+	}
+
 	logout() {
 		localStorage.removeItem(`access_token`);
 		localStorage.removeItem(`id_token`);
 		localStorage.removeItem(`expires_at`);
+		localStorage.removeItem('username');
 		this.userProfile = null;
 
 		history.replace('/');

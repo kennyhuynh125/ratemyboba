@@ -8,7 +8,14 @@ class Home extends React.Component {
 		super(props);
 		this.state = {
 			bobas: [],
+			profile: {}
 		};
+	}
+	componentWillMount() {
+		const { isAuthenticated, getProfile } = this.props.auth;
+		if (isAuthenticated())  {
+			getProfile();
+		}
 	}
 
 	// grabs all the boba data from the backend and stores it into the state.
@@ -25,6 +32,7 @@ class Home extends React.Component {
 	}
 
 	render() {
+		console.log(this.state.profile);
 		const { auth } = this.props;
 		const { isAuthenticated } = this.props.auth;
 		return (
