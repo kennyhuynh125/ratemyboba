@@ -9,6 +9,8 @@ import Ice from '../Ice';
 import Name from '../Name';
 import Description from '../Description';
 import Stores from '../Stores';
+
+import './style.css'
 class CreateBoba extends React.Component {
 	constructor(props) {
 		super(props);
@@ -109,29 +111,31 @@ class CreateBoba extends React.Component {
 		const { auth } = this.props;
 		const { isAuthenticated } = this.props.auth;
 		return (
-			<div className="container">
-			<Navbar auth={auth} />
-			{
-				!isAuthenticated() && (
-					<h1>Please log in to access this page.</h1>
-				)
-			}
-			{
-				isAuthenticated() && (
-					<div>
-						<h1>Add Your Boba Drink!</h1>
-						<div className="form-group">
-							<Name onChange={this.handleNameChange} />
-							<Sweetness onChange={this.handleSweetnessChange} />
-							<Ice onChange={this.handleIceChange} />
-							<Toppings onChange={this.handleToppingsChange} />
-							<Description onChange={this.handleDescriptionChange} />
-							<Stores stores={this.state.stores} onChange={this.handleStoreChange} store={this.state.store}/>
-							<button className="btn btn-primary" type="button" onClick={this.handleSubmit}>Create Boba!</button>	
+			<div>
+				<Navbar auth={auth} />
+				<div className="container">
+				{
+					!isAuthenticated() && (
+						<h1>Please log in to access this page.</h1>
+					)
+				}
+				{
+					isAuthenticated() && (
+						<div className="form">
+							<h1>Add Your Boba Drink!</h1>
+							<div className="form-group">
+								<Name onChange={this.handleNameChange} />
+								<Sweetness onChange={this.handleSweetnessChange} />
+								<Ice onChange={this.handleIceChange} />
+								<Toppings onChange={this.handleToppingsChange} />
+								<Description onChange={this.handleDescriptionChange} />
+								<Stores stores={this.state.stores} onChange={this.handleStoreChange} store={this.state.store}/>
+								<button className="btn btn-primary" type="button" onClick={this.handleSubmit}>Create Boba!</button>	
+							</div>
 						</div>
-					</div>
-				)
-			}
+					)
+				}
+				</div>
 			</div>
 		)
 	}

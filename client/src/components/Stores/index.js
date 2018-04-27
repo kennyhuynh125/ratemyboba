@@ -6,7 +6,7 @@ export const Stores = (props) => (
 		<select className="form-control" value={props.store} id="select" onChange={props.onChange} required="required">
 			<option value=""></option>
 			{props.stores.map((store) => {
-				return <option value={store.name}><p>{store.name + ", " + store.address + ", " + store.city}</p></option>
+				return <option value={store.name + ", " + store.address + ", " + store.city}><p>{store.name + ", " + store.address + ", " + store.city}</p></option>
 			})}
 		</select>
 	</div>

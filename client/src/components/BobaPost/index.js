@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-
+import './style.css';
 class BobaPost extends React.Component {
 	render() {
 		return (
-			<div className="col-md-4 card">
-				<div className="card-body">
-					<h1>{this.props.name}</h1>
+			<div className="col-md-4">
+				<div className="boba-post">
+					<h2>{this.props.name}</h2>
 					<p><strong>{this.props.shop}</strong></p>
 					<p>Sweetness: <strong>{this.props.sweetness}</strong></p>
 					<p>Ice: <strong>{this.props.ice}</strong></p>

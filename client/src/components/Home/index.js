@@ -36,14 +36,8 @@ class Home extends React.Component {
 		const { auth } = this.props;
 		const { isAuthenticated } = this.props.auth;
 		return (
-			<div className="container">
+			<div>
 				<Navbar auth={auth} />
-				<div>
-				{
-					isAuthenticated() && (
-						<h1>Welcome! You are logged In!</h1>
-					)
-				}
 				<h1>Rate My Boba</h1>
 				<p>RateMyProfessor, but for Boba.</p>
 				<h1>Boba Drinks</h1>
@@ -60,7 +54,6 @@ class Home extends React.Component {
 						})
 					}
 					</div>
-				</div>
 			</div>
 		)
 	}

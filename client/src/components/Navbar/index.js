@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './style.css';
 
 class Navbar extends React.Component {
 	login() {
@@ -12,9 +13,8 @@ class Navbar extends React.Component {
 
 	render() {
 		const { isAuthenticated } = this.props.auth;
-		const user_id = localStorage.getItem('username');
 		return (
-			<div className="container">
+			<div>
 				<div className="navbar navbar-fluid">
 					<div class="navbar-header">
 						<a class="navbar-brand">RateMyBoba</a>

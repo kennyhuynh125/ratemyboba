@@ -76,7 +76,7 @@ export default class Auth extends EventEmitter {
 		});
 	}
 
-	getUsername() {
+	getUsername(callback) {
 		return localStorage.getItem('username');
 	}
 
