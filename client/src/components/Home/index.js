@@ -32,9 +32,7 @@ class Home extends React.Component {
 	}
 
 	render() {
-		console.log(this.state.profile);
 		const { auth } = this.props;
-		const { isAuthenticated } = this.props.auth;
 		return (
 			<div>
 				<Navbar auth={auth} />
@@ -43,8 +41,9 @@ class Home extends React.Component {
 				<h1>Boba Drinks</h1>
 					<div>
 					{
-						this.state.bobas.map((boba) => {
+						this.state.bobas.map((boba, i) => {
 							return <BobaPost
+									key={i}
 									name={boba.name}
 									ice={boba.ice}
 									shop={boba.shop}
