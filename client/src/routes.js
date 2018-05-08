@@ -4,6 +4,7 @@ import Auth from './components/Auth';
 import history from './history';
 
 // components
+import AddStore from './components/AddStore';
 import About from './components/About';
 import CreateBoba from './components/CreateBoba';
 import Home from './components/Home';
@@ -28,6 +29,7 @@ export const makeRoutes = () => {
 			<Route eact path="/createBoba" render={(props) => <CreateBoba auth={auth} {...props} />} />
 			<Route exact path="/user_bobas" render={(props) => <UserBobas auth={auth} {...props} />} />
 			<Route exact path="/currentStores" render={(props) => <CurrentStores auth={auth} {...props} />} />
+			<Route exact path="/addStore" render={(props) => <AddStore auth={auth} {...props} />} />
 			<Route path="/callback" render={(props) => {
 				handleAuthentication(props);
 				return <Callback {...props} />

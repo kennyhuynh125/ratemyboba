@@ -23,6 +23,7 @@ class Navbar extends React.Component {
 					<li><Link to='/'>Home</Link></li>
 					<li><Link to='/about'>About</Link></li> 
 					<li><Link to='/currentStores'>Current Stores</Link></li>
+					<li><Link to='/addStore'>Add New Store</Link></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
