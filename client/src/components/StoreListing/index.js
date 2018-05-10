@@ -4,7 +4,7 @@ import style from './style.css'
 const StoreListing = (props) => {
 	return (
 		<div>
-			<p>{props.name}, {props.address}, {props.city}, {props.state}</p>
+			<p><strong>{props.name}</strong>, {props.address}, {props.city}, {props.state}</p>
 		</div>
 	)
 }
