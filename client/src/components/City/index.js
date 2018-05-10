@@ -1,14 +1,14 @@
 import React from 'react';
 
-export const Name = (props) => (
+export const City = (props) => (
 	<div class="form-group">
-		<label for="name">{props.name}</label>
+		<label for="city">{props.name}</label>
 		<input type="text" 
 			className="form-control"
-			id="name" 
+			id="city" 
 			onChange={props.onChange}
 			placeholder={props.placeholder} />
 	</div>
 );
 
-export default Name;
+export default City;

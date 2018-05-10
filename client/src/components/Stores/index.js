@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Stores = (props) => (
 	<div class="form-group">
-		<label for="select">Select A Store</label>
+		<label for="select">{props.name}</label>
 		<select className="form-control" value={props.store} id="select" onChange={props.onChange} required="required">
 			<option value=""></option>
 			{props.stores.map((store) => {

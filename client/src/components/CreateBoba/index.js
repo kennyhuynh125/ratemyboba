@@ -11,6 +11,7 @@ import Description from '../Description';
 import Stores from '../Stores';
 
 import './style.css'
+
 class CreateBoba extends React.Component {
 	constructor(props) {
 		super(props);
@@ -82,7 +83,6 @@ class CreateBoba extends React.Component {
 	// first checks if any input is empty
 	// if not, call a HTTP request to add boba item to database
 	handleSubmit() {
-		console.log(this.state.profile);
 		if (this.state.name.length === 0 || this.state.sweetness.length === 0 || this.state.toppings.length === 0
 			|| this.state.ice.length === 0 || this.state.store.length === 0 || this.state.description.length === 0) {
 			return;
@@ -124,12 +124,12 @@ class CreateBoba extends React.Component {
 						<div className="form">
 							<h1>Add Your Boba Drink!</h1>
 							<div className="form-group">
-								<Name onChange={this.handleNameChange} />
-								<Sweetness onChange={this.handleSweetnessChange} />
-								<Ice onChange={this.handleIceChange} />
-								<Toppings onChange={this.handleToppingsChange} />
-								<Description onChange={this.handleDescriptionChange} />
-								<Stores stores={this.state.stores} onChange={this.handleStoreChange} store={this.state.store}/>
+								<Name onChange={this.handleNameChange} name="Drink Name" placeholder="Jasmine Green Tea, Boba Milk Tea..." />
+								<Sweetness onChange={this.handleSweetnessChange} name="Sweetness Level" placeholder="Regular, 70%, less, 10%" />
+								<Ice onChange={this.handleIceChange} name="Ice Level" placeholder="Regular, 70%, less, 10%" />
+								<Toppings onChange={this.handleToppingsChange} name="Toppings" placeholder="Boba, grass jelly, lychee jelly..." />
+								<Description onChange={this.handleDescriptionChange} name="Description" placeholder="Recommended for..." />
+								<Stores stores={this.state.stores} onChange={this.handleStoreChange} store={this.state.store} name="Select a Store" />
 								<button className="btn btn-primary" type="button" onClick={this.handleSubmit}>Create Boba!</button>	
 							</div>
 						</div>
