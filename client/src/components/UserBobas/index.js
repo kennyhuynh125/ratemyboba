@@ -42,11 +42,10 @@ class UserBobas extends React.Component {
 	render() {
 		const { auth } = this.props;
 		const { isAuthenticated } = this.props.auth;
-		console.log(this.state.bobas);
 		return (
 			<div>
 				<Navbar auth={auth} />
-				<div className="container">
+				<div>
 					{
 						!isAuthenticated() && (
 							<h1>You are not allowed to access this page.</h1>
@@ -54,14 +53,22 @@ class UserBobas extends React.Component {
 					}
 					{
 						isAuthenticated() && (
+							<h1>My Drinks</h1>
+						)
+					}
+					{
+						isAuthenticated() && (
 							this.state.bobas.map((boba) => {
 								return <BobaPost
+										key={boba._id}
 										name={boba.name}
 										ice={boba.ice}
 										shop={boba.shop}
 										sweetness={boba.sweetness}
 										toppings={boba.toppings}
-										description={boba.description} />
+										description={boba.description}
+										boba_id={boba._id}
+										edit={true} />
 							})
 						)
 					}

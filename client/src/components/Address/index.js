@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const Address = (props) => (
-	<div class="form-group">
-		<label for="Address">{props.name}</label>
+	<div className="form-group">
+		<label htmlFor="Address">{props.name}</label>
 		<input type="text" 
 			className="form-control"
 			id="city" 

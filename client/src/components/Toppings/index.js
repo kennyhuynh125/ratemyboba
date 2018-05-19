@@ -1,13 +1,14 @@
 import React from 'react';
 
 export const Toppings = (props) => (
-	<div class="form-group">
-		<label for="toppings">{props.name}</label>
+	<div className="form-group">
+		<label htmlFor="toppings">{props.name}</label>
 		<input type="text" 
 			className="form-control"
 			id="toppings" 
 			onChange={props.onChange}
-			required="required" 
+			required="required"
+			value={props.bobaToppings}
 			placeholder={props.placeholder} />
 	</div>
 );

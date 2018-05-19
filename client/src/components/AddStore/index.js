@@ -54,7 +54,7 @@ class AddStore extends React.Component {
 	// adds store by calling a POST request to the API
 	addStore() {
 		if (this.state.name.length === 0 || this.state.city.length === 0
-			|| this.state.address.length == 0 || this.state.state.length === 0) {
+			|| this.state.address.length === 0 || this.state.state.length === 0) {
 			alert("One of the fields is blank. Please fill it in.");
 			return;
 		}

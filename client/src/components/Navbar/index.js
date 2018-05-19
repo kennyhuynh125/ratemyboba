@@ -16,16 +16,16 @@ class Navbar extends React.Component {
 		return (
 			<div>
 				<div className="navbar navbar-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand">RateMyBoba</a>
+					<div className="navbar-header">
+						<a className="navbar-brand">RateMyBoba</a>
 				</div>
-				<ul class="nav navbar-nav">
+				<ul className="nav navbar-nav">
 					<li><Link to='/'>Home</Link></li>
 					<li><Link to='/about'>About</Link></li> 
 					<li><Link to='/currentStores'>Current Stores</Link></li>
 					<li><Link to='/addStore'>Add New Store</Link></li>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
+				<ul className="nav navbar-nav navbar-right">
 					<li>
 					{
 						!isAuthenticated() && (

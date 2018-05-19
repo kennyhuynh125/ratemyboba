@@ -1,12 +1,12 @@
 import React from 'react';
 
 export const Stores = (props) => (
-	<div class="form-group">
-		<label for="select">{props.name}</label>
-		<select className="form-control" value={props.store} id="select" onChange={props.onChange} required="required">
+	<div className="form-group">
+		<label htmlFor="select">{props.name}</label>
+		<select className="form-control" value={props.bobaStore} id="select" onChange={props.onChange} required="required">
 			<option value=""></option>
-			{props.stores.map((store) => {
-				return <option value={store.name + ", " + store.address + ", " + store.city}><p>{store.name + ", " + store.address + ", " + store.city}</p></option>
+			{props.stores.map((store, i) => {
+				return <option key={i} value={store.name + ", " + store.address + ", " + store.city}>{store.name + ", " + store.address + ", " + store.city}</option>
 			})}
 		</select>
 	</div>

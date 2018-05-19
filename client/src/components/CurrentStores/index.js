@@ -12,6 +12,7 @@ class CurrentStores extends React.Component {
 		}
 	}
 
+	// get all the shops and set stores state to the array of stores.
 	componentDidMount() {
 		axios.get('/getShops')
 		.then((response) => {
@@ -31,8 +32,8 @@ class CurrentStores extends React.Component {
 				<ul>
 					{
 						this.state.stores.map((store, i)=> {
-						return <li><StoreListing
-									key={i}
+						return <li key={i}>
+									<StoreListing
 									name={store.name}
 									city={store.city}
 									address={store.address}

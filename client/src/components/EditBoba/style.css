@@ -1,0 +1,9 @@
+h1 {
+	text-align: center;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

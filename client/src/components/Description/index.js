@@ -1,13 +1,14 @@
 import React from 'react';
 
 export const Description = (props) => (
-	<div class="form-group">
-		<label for="description">{props.name}</label>
+	<div className="form-group">
+		<label htmlFor="description">{props.name}</label>
 		<textarea type="text" 
 			className="form-control"
 			id="description" 
 			onChange={props.onChange}
-			required = "required" 
+			required = "required"
+			value={props.bobaDescription}
 			placeholder={props.placeholder} />
 	</div>
 );
