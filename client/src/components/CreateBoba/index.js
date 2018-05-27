@@ -22,6 +22,7 @@ class CreateBoba extends React.Component {
 			description: '',
 			ice: '',
 			sweetness: '',
+			imageName: '',
 			stores: [],
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);

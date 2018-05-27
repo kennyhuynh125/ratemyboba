@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const CONFIG = require('./server/config/config.js');
 const bobaController = require('./server/controllers/boba');
 const shopController = require('./server/controllers/shop');
@@ -12,6 +13,7 @@ const app = express();
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
+app.use(cors());
 app.use(bodyParser.json());
 
 const port = process.env.PORT || 3001;

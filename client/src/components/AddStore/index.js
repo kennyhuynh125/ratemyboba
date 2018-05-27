@@ -79,6 +79,7 @@ class AddStore extends React.Component {
 			<div>
 				<Navbar auth={auth} />
 				<h2>Want to add a new store?</h2>
+				<p id="description"> We currently only have stores based in the Bay Area, but feel free to add from anywhere in the world!</p>
 				<div className="container">
 					<div className="form-group">
 						<Name onChange={this.handleNameChange} name="Store Name" placeholder="Super Cue, ShareTea..." />
