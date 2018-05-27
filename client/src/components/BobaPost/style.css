@@ -21,3 +21,7 @@ p {
 p > strong {
 	font-size: 15px;
 }
+
+#boba-name {
+	text-align: left;
+}

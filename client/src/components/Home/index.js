@@ -54,7 +54,8 @@ class Home extends React.Component {
 								shop={boba.shop}
 								sweetness={boba.sweetness}
 								toppings={boba.toppings}
-								description={boba.description} />
+								description={boba.description}
+								boba_id={boba._id} />
 						})
 					}
 					</div>

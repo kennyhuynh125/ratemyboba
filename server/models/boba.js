@@ -7,7 +7,8 @@ const BobaSchema = new mongoose.Schema({
 	toppings: String,
 	ice: String,
 	user_id: String,
-	description: String
+	description: String,
+	reviews: [String],
 });
 
 module.exports = mongoose.model('Boba', BobaSchema);

@@ -12,6 +12,7 @@ import Callback from './components/Callback';
 import UserBobas from './components/UserBobas';
 import CurrentStores from './components/CurrentStores';
 import EditBoba from './components/EditBoba';
+import FullBobaPost from './components/FullBobaPost';
 
 // instantiate auth instance
 const auth = new Auth();
@@ -32,6 +33,7 @@ export const makeRoutes = () => {
 			<Route exact path="/currentStores" render={(props) => <CurrentStores auth={auth} {...props} />} />
 			<Route exact path="/addStore" render={(props) => <AddStore auth={auth} {...props} />} />
 			<Route exact path="/editBoba/:boba_id" render={(props) => <EditBoba auth={auth} {...props} />} />
+			<Route exact path="/boba/:boba_id" render={(props) => <FullBobaPost auth={auth} {...props} />} />
 			<Route path="/callback" render={(props) => {
 				handleAuthentication(props);
 				return <Callback {...props} />

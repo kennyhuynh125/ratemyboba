@@ -1,9 +1,11 @@
 import React from 'react';
+import './style.css';
 
 const StoreListing = (props) => {
 	return (
-		<div>
-			<p><strong>{props.name}</strong>, {props.address}, {props.city}, {props.state}</p>
+		<div className="store-list">
+			<p><strong>{props.name}</strong></p>
+			<p>{props.address}, {props.city}, {props.state}</p>
 		</div>
 	)
 }

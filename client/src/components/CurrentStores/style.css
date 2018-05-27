@@ -1,0 +1,4 @@
+.stores {
+	display: flex;
+	flex-direction: row;
+}
