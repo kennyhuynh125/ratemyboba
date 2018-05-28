@@ -35,6 +35,7 @@ app.get('/user_bobas/:user_id', bobaController.getAllUserBobas);
 app.get('/user_boba/:boba_id', bobaController.getUserBoba);
 app.post('/addBoba', bobaController.addBoba);
 app.post('/edit_boba/:boba_id', bobaController.editUserBoba);
+app.post('/updateReviews/:boba_id', bobaController.updateReviews);
 app.get('/getShops', shopController.getShops);
 app.post('/addShop', shopController.addShop);
 app.delete('/remove_boba/:boba_id', bobaController.removeUserBoba);

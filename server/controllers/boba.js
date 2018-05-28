@@ -95,3 +95,14 @@ exports.removeUserBoba = (req,res) => {
 	});
 };
 
+exports.updateReviews = (req,res) => {
+	Boba.update({_id: req.params.boba_id}, {
+		reviews: req.body.reviews
+	}, (err, reviews) => {
+		if (err) {
+			res.send(err);
+		} else {
+			res.send(reviews);
+		}
+	});
+};
