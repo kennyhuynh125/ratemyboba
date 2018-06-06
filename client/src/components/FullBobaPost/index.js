@@ -12,7 +12,13 @@ class FullBobaPost extends React.Component {
 			review: '',
 			currentReviews: [],
 			user_id: '',
-			boba_id: ''
+			boba_id: '',
+			name: '',
+			shop: '',
+			sweetness: '',
+			ice: '',
+			toppings: '',
+			description: '',
 		}
 		this.handleReviewChange = this.handleReviewChange.bind(this);
 		this.addReview = this.addReview.bind(this);
@@ -26,7 +32,13 @@ class FullBobaPost extends React.Component {
 			this.setState({
 				currentReviews: response.data[0].reviews,
 				user_id: response.data[0].user_id,
-				boba_id: this.props.match.params.boba_id
+				boba_id: this.props.match.params.boba_id,
+				name: response.data[0].name,
+				shop: response.data[0].shop,
+				sweetness: response.data[0].sweetness,
+				ice: response.data[0].ice,
+				toppings: response.data[0].toppings,
+				description: response.data[0].description
 			});
 		})
 		.catch((error) => {
@@ -40,9 +52,8 @@ class FullBobaPost extends React.Component {
 		e.preventDefault();
 	}
 
+	// updates reviews everytime there is a new review.
 	addReview() {
-		// api call using axios will go here
-		// to update boba entry with the new comment.
 		if (this.state.review.length === 0) {
 			alert("Review cannot be empty!");
 			return;
@@ -69,14 +80,23 @@ class FullBobaPost extends React.Component {
 			<div>
 				<Navbar auth={auth} />
 				<div className="container">
-					<h1>In Development</h1>
-					<p>Comments will be here</p>
-					{reviews.map((review,i) => {
-						return <p className="reviews" key={i}>{review}</p>
-					})}
+					<h1>{this.state.name}</h1>
+					<h2>{this.state.shop}</h2>
+					<p>Ice: {this.state.ice}</p>
+					<p>Sweetness: {this.state.sweetness}</p>
+					<p>Topping: {this.state.toppings}</p>
+					<p>Description: {this.state.description}</p>
+					<br />
+					<br />
+					<p>Reviews</p>
+					<ul>
+						{reviews.map((review,i) => {
+							return <li className="reviews" key={i}><strong>{review}</strong></li>
+						})}
+					</ul>
 					{
 						!isAuthenticated() && (
-							<h1>You need to be logged in to review a drink!</h1>
+							<p>You need to be logged in to review a drink!</p>
 						)
 					}
 					{
@@ -86,7 +106,9 @@ class FullBobaPost extends React.Component {
 								<label htmlFor="review">Leave a review for this drink!</label>
 								<textarea className="form-control" id="review" cols="60" rows="5"
 								placeholder="Tastes great!" onChange={this.handleReviewChange} required />
-								<button className="btn btn-primary" type="button" onClick={this.addReview}>Add Review</button>
+								<div>
+									<button className="btn btn-primary" type="button" onClick={this.addReview}>Add Review</button>
+								</div>
 								</div>
 							</form>
 						)
